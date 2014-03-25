@@ -1,0 +1,28 @@
+{
+  "name": "client",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "1.2.6",
+    "json3": "~3.2.6",
+    "es5-shim": "~2.1.0",
+    "jquery": "~1.10.2",
+    "bootstrap": "~3.1.1",
+    "angular-route": "1.2.6",
+    "bootswatch": "~3.1.1",
+    "angular-blocks": "~0.1.8",
+    "angular-ui-router": "~0.2.10",
+    "angular-cookies": "~1.2.14",
+    "lodash": "~2.4.1",
+    "angular-strap": "~2.0.0",
+    "angular-motion": "~0.3.2",
+    "angular-notify-toaster": "~0.4.5",
+    "angular-loading-bar": "~0.3.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.2.6",
+    "angular-scenario": "1.2.6"
+  },
+  "resolutions": {
+    "angular": "~1.2.10"
+  }
+}

@@ -1,0 +1,47 @@
+<div class="list-group">
+
+  <div class="list-group-item clearfix" ng-repeat="content in contents">
+
+    <div class="pull-right"><small>by {{ content.owner.username }}</small></div>
+
+    <h4 class="list-group-item-heading">
+      {{ content.title }}
+    </h4>
+
+    <p class="list-group-item-text">
+      {{ content.description }}
+    </p>
+
+    <div class="pull-left">
+      <a href="#" class="text-muted">
+        <small>{{ content.created | date:dateFormat }}</small>
+      </a>
+    </div>
+
+    <div class="pull-right clearfix" ng-if="content.owner.id == user.id">
+
+      <a ng-href="#/edit/{{ content.id }}" type="button" class="btn btn-success btn-sm" title="Edit '{{ content.title }}'">
+        <span class="glyphicon glyphicon-pencil"></span>
+      </a>
+
+      <button
+        ng-init="item = content; confirmFunc = deleteContent;"
+        type="button"
+        class="btn btn-danger btn-sm"
+        bs-popover
+        title="Delete '{{ item.title }}'"
+        content="Are you sure you want to delete '{{ item.title }}'?"
+        animation="am-flip-x"
+        placement="left"
+        content-template="views/partials/popover_confirm.html"
+        >
+
+        <span class="glyphicon glyphicon-trash"></span>
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

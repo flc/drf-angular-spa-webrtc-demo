@@ -1,0 +1,38 @@
+<div data-extend-template="views/base.html">
+  <div data-block="content">
+
+    <div class="panel panel-default panel-form">
+
+      <div class="panel-heading">
+        <h1 ng-if="instance">Edit: {{ instance.title }}</h1>
+        <h1 ng-if="!instance">Create content</h1>
+      </div>
+
+      <div class="panel-body">
+
+        <form role="form" ng-submit="submitForm()">
+
+          <div class="text-danger error">{{ errors.form }}</div>
+
+          <div class="form-group" ng-class="{'has-error': errors.title}">
+            <label for="title">Title</label>
+            <div class="text-danger error">{{ errors.title }}</div>
+            <input ng-model="form.title" name="title" type="text" class="form-control" id="form.title" placeholder="Title">
+          </div>
+
+          <div class="form-group" ng-class="{'has-error': errors.description}">
+            <label for="descriptuon">Description</label>
+            <div class="text-danger error">{{ errors.description }}</div>
+            <textarea ng-model="form.description" name="description" type="text" class="form-control" id="form.description" placeholder="Description"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-default">Submit</button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

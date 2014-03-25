@@ -1,0 +1,49 @@
+<div data-extend-template="views/base.html">
+<div data-block="content">
+
+  <div class="panel panel-default panel-form">
+
+    <div class="panel-heading"><h1>Sign Up</h1></div>
+
+    <div class="panel-body">
+
+      <p>Already have an account? <a href="#/account/signin">Sign In</a></p>
+
+      <form role="form" ng-submit="submitForm()">
+
+        <div class="text-danger error">{{errors.form}}</div>
+
+        <div class="form-group" ng-class="{'has-error': errors.email}">
+          <label for="email">Email</label>
+          <div class="text-danger error">{{ errors.email }}</div>
+          <input ng-model="form.email" name="email" type="email" class="form-control" id="email" placeholder="Your Email">
+        </div>
+
+        <div class="form-group" ng-class="{'has-error': errors.username}">
+          <label for="username">Username</label>
+          <div class="text-danger error">{{ errors.username }}</div>
+          <input ng-model="form.username" name="username" type="text" class="form-control" id="username" placeholder="Your Username">
+        </div>
+
+        <div class="form-group" ng-class="{'has-error': errors.password1}">
+          <label for="password1">Password</label>
+          <div class="text-danger error">{{ errors.password1 }}</div>
+          <input ng-model="form.password1" name="password1" type="password" class="form-control" id="password1" placeholder="Password">
+        </div>
+
+        <div class="form-group" ng-class="{'has-error': errors.password2}">
+          <label for="password2">Password (again)</label>
+          <div class="text-danger error">{{ errors.password2 }}</div>
+          <input ng-model="form.password2" name="password2" type="password" class="form-control" id="password2" placeholder="Password (again)">
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+</div>

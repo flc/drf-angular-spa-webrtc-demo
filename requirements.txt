@@ -1,0 +1,9 @@
+Django==1.6.2
+argparse==1.2.1
+django-extensions==1.3.3
+djangorestframework==2.3.13
+django-userena==1.3.0
+ipython==1.2.1
+six==1.5.2
+wsgiref==0.1.2
+-e git://github.com/flc/django-userena-rf#egg=django_userena_rf-dev

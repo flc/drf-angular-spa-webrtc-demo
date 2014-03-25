@@ -1,0 +1,47 @@
+<div data-extend-template="views/base.html">
+<div data-block="content">
+
+    <div class="panel panel-default panel-form">
+      <div class="panel-heading"><h1>Sign In</h1></div>
+
+      <div class="panel-body">
+
+        <p>Don't have an account? <a href="#/account/signup">Sign Up</a></p>
+
+        <form role="form" class="form-login" ng-submit="submitForm()">
+
+          <div class="text-danger error">{{ errors.form }}</div>
+
+          <div class="form-group" ng-class="{'has-error': errors.identification}">
+            <label for="identification">Email or username</label>
+            <div class="text-danger error">{{ errors.identification }}</div>
+            <input ng-model="form.identification" name="identification" type="text" class="form-control" id="form.identification" placeholder="Email or username">
+          </div>
+
+          <div class="form-group" ng-class="{'has-error': errors.password}">
+            <label for="password">Password</label>
+            <div class="text-danger error">{{ errors.password }}</div>
+            <input ng-model="form.password" name="password" type="password" class="form-control" id="password" placeholder="Password" >
+          </div>
+
+          <div class="checkbox">
+            <label>
+              <div class="text-danger error">{{ errors.remember_me }}</div>
+              <input ng-model="form.remember_me" name="remember_me" type="checkbox" name="remember_me" id="remember_me"> Remember me
+            </label>
+          </div>
+
+          <div class="form-group">
+            <a href="#/account/password-reset">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn btn-default">Submit</button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+</div>
+</div>

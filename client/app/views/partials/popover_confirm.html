@@ -1,0 +1,21 @@
+<form name="popoverForm">
+
+  <p ng-bind-html="content"></p>
+
+  <div class="form-actions">
+
+    <button type="button" class="btn btn-sm btn-danger btn-lg" ng-click="$hide()">
+      {{ cancelButtonName || 'No' }}
+    </button>
+
+    <button
+      type="button"
+      class="btn btn-sm btn-primary"
+      ng-click="popover.saved=true;$hide();confirmFunc(item);"
+      >
+      {{ confirmButtonName || 'Yes' }}
+    </button>
+
+  </div>
+
+</form>

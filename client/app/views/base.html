@@ -1,0 +1,49 @@
+<header data-block="header" ng-controller="HeaderCtrl">
+
+  <div class="navbar navbar-default">
+
+    <div class="navbar-header">
+
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Demo app</a>
+
+    </div>
+
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+
+      <ul class="nav navbar-nav">
+        <li ng-class="{active: isActivePath('/')}"><a href="#">Home</a></li>
+        <li ng-if="user.id" ng-class="{active: isActivePath('/me')}"><a href="#/me">Me</a></li>
+        <li ng-if="user.id" ng-class="{active: isActivePath('/create')}"><a href="#/create">Create</a></li>
+      </ul>
+
+      <form class="navbar-form navbar-left">
+        <input class="form-control col-lg-8" placeholder="Search" type="text">
+      </form>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="">{{ user.username }}</a></li>
+        <li ng-if="!user.id" ng-class="{active: isActivePath('/account/signup')}"><a href="#/account/signup">Sign Up</a></li>
+        <li ng-if="!user.id" ng-class="{active: isActivePath('/account/signin')}"><a href="#/account/signin">Sign In</a></li>
+        <li ng-if="user.id"><a class="btn" ng-click="signOut()">Sign Out</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+
+  <toaster-container toaster-options="{'position-class': 'toast-top-right'}"></toaster-container>
+  <!-- <div>{{ serverMessage }}</div> -->
+
+</header>
+
+
+<div data-block="content"></div>
+
+<hr>
+
+<div data-block="footer" ng-include src="'views/footer.html'"></div>
